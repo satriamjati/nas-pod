@@ -1,0 +1,1 @@
+podman run -d --replace --name nas-web --pod nas-pod localhost/nas-password-changer:latest

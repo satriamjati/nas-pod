@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Password</title>
+</head>
+<body>
+    <h2>Change Password</h2>
+    <form method="POST">
+        <label>Username:</label><br>
+        <input type="text" name="username"><br><br>
+
+        <label>Old Password:</label><br>
+        <input type="password" name="old_password"><br><br>
+
+        <label>New Password:</label><br>
+        <input type="password" name="new_password"><br><br>
+
+        <label>Retype new Password:</label><br>
+        <input type="password" name="retype_new_password"><br><br>
+
+        <input type="submit" value="Change Password">
+    </form>
+
+    {% if message %}
+        <p><strong>{{ message }}</strong></p>
+    {% endif %}
+</body>
+</html>

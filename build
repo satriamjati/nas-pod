@@ -1,1 +1,2 @@
 podman build -t nas-image .
+source ./web/build

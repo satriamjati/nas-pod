@@ -4,3 +4,4 @@ podman run -d --name nas --replace --pod nas-pod \
         -v /mnt/data/nas/share:/mnt/2 \
         -v  ~/svc/nas/smb.conf:/etc/samba/smb.conf:ro \
         localhost/nas-image:latest
+source ./web/run
