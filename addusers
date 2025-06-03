@@ -1,3 +1,4 @@
+#!/bin/bash
 podman exec -it nas sh -c \
 'addgroup -g 2001 gal && \
     adduser -u 2001 -G gal -D gal && \

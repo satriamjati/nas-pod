@@ -12,6 +12,7 @@ config
 
 install
 - ./build && ./install
+- ./install-service (for systemd)
 
 start
 - ./run

@@ -1,0 +1,16 @@
+[Unit]
+Description=Network Attached Storage (NAS) Podman Pod
+After=network.target
+Requires=podman.socket
+
+[Service]
+Restart=always
+WorkingDirectory=%h/svc/nas
+ExecStart=%h/svc/nas/run
+ExecStop=%h/svc/nas/stop
+KillMode=process
+TimeoutStopSec=60
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

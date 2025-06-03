@@ -1,3 +1,4 @@
+#!/bin/bash
 source ./createpod
 podman run -d --name nas --replace --pod nas-pod \
         -v /srv/nas/share:/mnt/1 \
