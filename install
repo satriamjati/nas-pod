@@ -1,0 +1,29 @@
+echo "Allow Port 445"
+source ./allowport
+echo ""
+
+echo "Make share folders"
+source ./makeshare
+echo ""
+
+echo "Set share Permission"
+source ./setpermall
+echo ""
+
+echo "Setup nas-pod"
+source ./runfirst
+echo ""
+
+echo "Add users and groups"
+source ./addusers
+source ./setusers
+echo ""
+
+echo "Keep password"
+source ./keeppass
+echo ""
+
+# echo "Run passwd changer backend" # need access to private and have smb installed but how?
+
+# echo "Run web for changelimg password" # use-nasweb
+

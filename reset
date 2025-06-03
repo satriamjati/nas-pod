@@ -1,0 +1,2 @@
+source ./stop
+sudo rm -rf /srv/nasrootless/config/private

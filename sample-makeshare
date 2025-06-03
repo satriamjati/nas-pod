@@ -1,0 +1,2 @@
+sudo mkdir -p /srv/nasrootless/1/public
+sudo mkdir -p /srv/nasrootless/2/user

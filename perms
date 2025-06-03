@@ -1,0 +1,31 @@
+personal and group rwx (family no guest readable)
+sudo chmod -R 770 .
+
+sudo setfacl -R -m g::rwx .
+sudo setfacl -R -m d:g::rwx .
+
+   force group = family
+   create mask = 0770
+   directory mask = 2770
+
+personal and group r-x (ipad)
+sudo chmod -R 750 .
+
+sudo setfacl -R -m g::r-x .
+sudo setfacl -R -m d:g::r-x .
+
+   force group = family
+   create mask = 0750
+   directory mask = 2750
+
+group stay group (allshare)
+sudo chmod -R g+s .
+
+guest readble (family with guest readable)
+sudo chmod -R 775 .
+sudo setfacl -R -m g::rwx .
+sudo setfacl -R -m d:g::rwx .
+
+   force group = family
+   create mask = 0775
+   directory mask = 2775

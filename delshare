@@ -1,0 +1,2 @@
+sudo rm -rf /srv/nasrootless/1/
+sudo rm -rf /srv/nasrootless/2/

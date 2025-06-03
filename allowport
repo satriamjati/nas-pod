@@ -1,0 +1,3 @@
+# Set cap_net_bind_service capability to slirp4netns 
+which slirp4netns
+sudo setcap cap_net_bind_service=+ep $(which slirp4netns)

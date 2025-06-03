@@ -1,0 +1,7 @@
+podman exec -it nas sh -c \
+'for u in user1 user2 user3; do \
+      printf "123\n123\n" | smbpasswd -s -a "$u" && \
+      smbpasswd -e "$u"; \
+    done && \
+    printf "password123\npassword123\n" | smbpasswd -s -a admin && \
+    smbpasswd -e admin'

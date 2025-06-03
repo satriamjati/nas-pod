@@ -1,0 +1,17 @@
+podman exec -it nas sh -c \
+'addgroup -g 2001 user1 && \
+    adduser -u 2001 -G user1 -D user1 && \
+    addgroup -g 2002 user2 && \
+    adduser -u 2002 -G user2 -D user2 && \
+    addgroup -g 2003 user3 && \
+    adduser -u 2003 -G user3 -D user3 && \
+    addgroup -g 2100 group1 && \
+    addgroup user1 group1 && \
+    addgroup user2 group1 && \
+    addgroup user3 group1 && \
+    addgroup -g 2000 admin && \
+    adduser -u 2000 -G admin -D admin && \
+    addgroup admin user1 && \
+    addgroup admin user2 && \
+    addgroup admin user3 && \
+    addgroup admin group1'

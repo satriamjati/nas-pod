@@ -1,0 +1,6 @@
+sudo mkdir -p /srv/nas/config/private
+sudo chown -R 1000:1000 /srv/nas/config/private
+podman cp nas:/var/lib/samba/private/. /srv/nas/config/private/
+
+source ./stop
+source ./run

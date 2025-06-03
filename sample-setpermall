@@ -1,0 +1,17 @@
+# [Full Access All]
+source ./setperm /srv/nasrootless/1/public 1000:1000 777 rwx
+
+# Group1 gid:2100 + Guest [Partial Group + guest readonly]
+source ./setperm /srv/nasrootless/1/group 1000:1020999 775 rwx
+
+# Group gid:2100 [Full Access Group]
+source ./setperm /srv/nasrootless/2/group 1000:1020999 770 rwx
+
+# User3 uid:2003 gid:2003 [Private + admin readonly]
+source ./setperm /srv/nasrootless/2/user3 102001:102099 750 r-x
+
+# User2 uid:2002 Group1 gid:2100 [Private + group readonly]
+source ./setperm /srv/nasrootless/2/user2  102001:102099 750 r-x
+
+# User1 uid:2001 gid:2001 [Full Private (no admin)]
+source ./setperm /srv/nasrootless/2/user1 102000:102000 700 ---

@@ -1,0 +1,8 @@
+source ./createpod
+podman run -d --name nas --replace --pod nas-pod \
+        -v /srv/nas/share:/mnt/1 \
+        -v /mnt/data/nas/share:/mnt/2 \
+        -v  ~/svc/nas/smb.conf:/etc/samba/smb.conf:ro \
+	-v /srv/nas/config/private:/var/lib/samba/private:Z \
+        localhost/nas-image:latest
+source ./addusers

@@ -1,0 +1,18 @@
+#!/bin/bash
+# Usage: setperm <directory> <uid:gid> <mode> <group_perms>
+# Example: ./setperm /srv/nasrootless/1/public 1000:102099 770 rwx
+
+if [ "$#" -ne 4 ]; then
+  echo "Usage: $0 <dir> <uid:gid> <mode> <group_perms>"
+  exit 1
+fi
+
+DIR="$1"
+OWNER="$2"
+MODE="$3"
+GPERMS="$4"
+
+sudo chown -R "${OWNER}" "${DIR}"
+sudo chmod -R "${MODE}" "${DIR}"
+sudo setfacl -R -m "g::${GPERMS}" "${DIR}"
+sudo setfacl -R -m "d:g::${GPERMS}" "${DIR}"
