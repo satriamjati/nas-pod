@@ -1,0 +1,17 @@
+# Family
+source ./setperm /srv/nas/share/public 1000:102099 770 rwx
+# iPad
+source ./setperm /mnt/data/nas/share/ipad 102006:102099 750 r-x
+
+# Users
+source ./setperm /srv/nas/share/gal 102000:102000 750 r-x
+source ./setperm /srv/nas/share/somsom 102001:102001 750 r-x
+source ./setperm /srv/nas/share/in 102002:102002 750 r-x
+source ./setperm /srv/nas/share/ib 102003:102003 750 r-x
+source ./setperm /srv/nas/share/pi 102004:102004 750 r-x
+
+source ./setperm /mnt/data/nas/share/gal 102000:102000 750 r-x
+source ./setperm /mnt/data/nas/share/somsom 102001:102001 750 r-x
+source ./setperm /mnt/data/nas/share/in 102002:102002 750 r-x
+source ./setperm /mnt/data/nas/share/ib 102003:102003 750 r-x
+source ./setperm /mnt/data/nas/share/pi 102004:102004 750 r-x

@@ -1,0 +1,9 @@
+podman exec -it nas sh -c \
+'for u in gal somsom in ib pi aca; do \
+      printf "123\n123\n" | smbpasswd -s -a "$u" && \
+      smbpasswd -e "$u"; \
+    done && \
+    printf "iPad2023\niPad2023\n" | smbpasswd -s -a ipad && \
+    smbpasswd -e ipad && \
+    printf "KamuPastiBisa100\nKamuPastiBisa100\n" | smbpasswd -s -a admin && \
+    smbpasswd -e admin'

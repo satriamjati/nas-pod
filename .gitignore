@@ -3,3 +3,4 @@ setpermall
 setusers
 addusers
 makeshare
+smb.conf

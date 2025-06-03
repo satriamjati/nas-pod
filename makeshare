@@ -1,0 +1,13 @@
+sudo mkdir -p /srv/nas/share/public
+sudo mkdir -p /srv/nas/share/gal
+sudo mkdir -p /srv/nas/share/somsom
+sudo mkdir -p /srv/nas/share/in
+sudo mkdir -p /srv/nas/share/ib
+sudo mkdir -p /srv/nas/share/pi
+
+sudo mkdir -p /mnt/data/nas/share/ipad
+sudo mkdir -p /mnt/data/nas/share/gal
+sudo mkdir -p /mnt/data/nas/share/somsom
+sudo mkdir -p /mnt/data/nas/share/in
+sudo mkdir -p /mnt/data/nas/share/ib
+sudo mkdir -p /mnt/data/nas/share/pi

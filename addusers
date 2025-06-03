@@ -1,0 +1,33 @@
+podman exec -it nas sh -c \
+'addgroup -g 2001 gal && \
+    adduser -u 2001 -G gal -D gal && \
+    addgroup -g 2002 somsom && \
+    adduser -u 2002 -G somsom -D somsom && \
+    addgroup -g 2003 in && \
+    adduser -u 2003 -G in -D in && \
+    addgroup -g 2004 ib && \
+    adduser -u 2004 -G ib -D ib && \
+    addgroup -g 2005 pi && \
+    adduser -u 2005 -G pi -D pi && \
+    addgroup -g 2006 aca && \
+    adduser -u 2006 -G aca -D aca && \
+    addgroup -g 2007 ipad && \
+    adduser -u 2007 -G ipad -D ipad && \
+    addgroup -g 2100 family && \
+    addgroup gal family && \
+    addgroup somsom family && \
+    addgroup in family && \
+    addgroup ib family && \
+    addgroup pi family && \
+    addgroup aca family && \
+    addgroup ipad family && \
+    addgroup -g 2000 admin && \
+    adduser -u 2000 -G admin -D admin && \
+    addgroup admin gal && \
+    addgroup admin somsom && \
+    addgroup admin in && \
+    addgroup admin ib && \
+    addgroup admin pi && \
+    addgroup admin aca && \
+    addgroup admin ipad && \
+    addgroup admin family'
