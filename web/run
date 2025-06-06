@@ -1,2 +1,2 @@
 #!/bin/bash
-podman run -d --replace --name nas-web --pod nas-pod localhost/nas-password-changer:latest
+podman run -d --replace --name nas-web --pod nas-pod -e API_KEY=$SAMBA_API_KEY localhost/nas-password-changer:latest

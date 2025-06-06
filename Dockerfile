@@ -7,9 +7,8 @@ RUN apk add --no-cache python3 py3-pip py3-flask samba
 RUN python3 -m venv /opt/venv
 RUN /opt/venv/bin/pip install flask waitress
 
-# Copy your Flask app and run.py script into the container
-COPY api.py /api.py
-COPY run.py /run.py
+# Copy your Flask app into the container
+COPY app.py /app.py
 
 # Copy the entrypoint script to start both services
 COPY entrypoint.sh /entrypoint.sh

@@ -1,10 +1,20 @@
 #!/bin/bash
+source ./.env
 source ./createpod
-podman run -d --name nas --replace --pod nas-pod \
-        -v /srv/nas/share:/mnt/1 \
-        -v /mnt/data/nas/share:/mnt/2 \
-        -v  ~/svc/nas/smb.conf:/etc/samba/smb.conf:ro \
-	-v /srv/nas/config/private:/var/lib/samba/private:Z \
-        localhost/nas-image:latest
+
+PODMAN_CMD="podman run -d --name nas --replace --pod nas-pod \
+    -e API_KEY=$SAMBA_API_KEY \
+    -v $SAMBA_MOUNT_SRC_1:/mnt/1 \
+    -v $SAMBA_SMB_CONF_PATH/smb.conf:/etc/samba/smb.conf:ro \
+    -v $SAMBA_PRIVATE_PATH:/var/lib/samba/private:Z"
+
+if [ -n "$SAMBA_MOUNT_SRC_2" ]; then
+    PODMAN_CMD="$PODMAN_CMD -v $SAMBA_MOUNT_SRC_2:/mnt/2"
+fi
+
+PODMAN_CMD="$PODMAN_CMD localhost/nas-image:latest"
+
+eval "$PODMAN_CMD"
+
 source ./addusers
 source ./web/run

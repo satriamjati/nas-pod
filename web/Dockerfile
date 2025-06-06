@@ -1,5 +1,5 @@
 # Use official Python image
-FROM python:slim
+FROM python:alpine
 
 # Set working directory
 WORKDIR /app

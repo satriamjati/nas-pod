@@ -3,4 +3,4 @@
 /usr/sbin/smbd -F &
 
 # Start Flask with Waitress
-/opt/venv/bin/python /run.py
+/opt/venv/bin/python /app.py

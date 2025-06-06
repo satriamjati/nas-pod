@@ -2,10 +2,11 @@ from flask import Flask, request, jsonify
 import subprocess
 import os
 from functools import wraps
+from waitress import serve
 
 app = Flask(__name__)
 
-API_KEY = "nomnom"
+API_KEY = os.getenv("API_KEY", "default")
 
 # Authentication decorator
 def require_api_key(f):
@@ -51,4 +52,4 @@ def change_password():
         return jsonify({"error": f"Password change failed: {e.stderr.decode()}"}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)  # Listen on all IP addresses on the local network
+    serve(app, host="0.0.0.0", port=5000)

@@ -1,1 +1,1 @@
-podman build -t nas-password-changer .
+podman build -t nas-password-changer web/.

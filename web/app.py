@@ -1,7 +1,10 @@
 from flask import Flask, request, render_template, jsonify
+import os
 import requests
+from waitress import serve
 
 app = Flask(__name__)
+API_KEY = os.getenv("API_KEY", "default")
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -19,7 +22,7 @@ def index():
             url = "http://0.0.0.0:5000/change-password"
             headers = {
                 "Content-Type": "application/json",
-                "X-API-Key": "nomnom"
+                "X-API-Key": API_KEY
             }
             payload = {
                 "username": username,
@@ -39,4 +42,4 @@ def index():
     return render_template('form.html', message=message)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    serve(app, host='0.0.0.0', port=8080)
